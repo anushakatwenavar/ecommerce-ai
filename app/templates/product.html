@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recommended Products</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; background-color: #fff8f0; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    h1 { color: #e67e22; }
+    ul { list-style: none; padding-left: 0; }
+    li { margin-bottom: 10px; padding: 10px; background: #f9f9f9; border-left: 5px solid #e67e22; display: flex; justify-content: space-between; align-items: center; }
+    a.add-to-cart { text-decoration: none; background-color: #e67e22; color: white; padding: 5px 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Recommended Products</h1>
+    <ul>
+      {% for product in recommendations %}
+      <li>
+        {{ product }}
+        <a class="add-to-cart" href="/add_to_cart/{{ loop.index }}">🛒 Add to Cart</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p><a href="/">← Back to Home</a></p>
+  </div>
+</body>
+</html>
